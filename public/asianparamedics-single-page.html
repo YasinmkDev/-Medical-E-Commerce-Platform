@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asian Paramedics - Medical Devices & Equipment</title>
+  <meta name="description" content="Professional medical eCommerce platform featuring certified clinical devices, smart search, personalized recommendations, and rapid WhatsApp procurement.">
+
+  <!-- Google Fonts: DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canopy-green': '#0a3922',
+            'coral-pulse': '#ff643b',
+            'indigo-bloom': '#460095',
+            'leaf-bright': '#1dbf73',
+            'deep-teal': '#003642',
+            'lavender-mist': '#eee2ff',
+            'mint-wash': '#d2f2e3',
+            'sky-wash': '#ccf0f8',
+            'sage-wash': '#e4f7ee',
+            'lilac-wash': '#fdf0ff',
+            'peach-wash': '#ffede8',
+            'cream': '#faf7e8',
+            'paper-white': '#ffffff',
+            'ink-black': '#000000',
+            'graphite': '#3d3d3d',
+            'slate': '#7a7a7a'
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      font-feature-settings: "ss03" 1;
+    }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #eee2ff;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .display-tight {
+      letter-spacing: -0.028em;
+    }
+    .heading-tight {
+      letter-spacing: -0.019em;
+    }
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0a3922;
+    }
+  </style>
+</head>
+<body class="bg-[#eee2ff] text-[#000000] font-sans antialiased selection:bg-[#ff643b] selection:text-white">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed top-20 right-4 z-50 bg-[#0a3922] text-white text-[14px] font-semibold py-3 px-5 rounded-[40px] shadow-xl items-center gap-2 border border-white/20 transition-all duration-300 opacity-0 pointer-events-none hidden">
+    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1dbf73]"></i>
+    <span id="toast-text">Item added to cart</span>
+  </div>
+
+  <!-- Upper Urgent Hotline Bar -->
+  <div class="bg-[#0a3922] text-[#d2f2e3] text-[13px] py-1.5 px-4 sm:px-6">
+    <div class="max-w-[1280px] mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#1dbf73] animate-pulse"></span>
+        <span class="font-medium text-white">Emergency Paramedic Dispatch & Support:</span>
+        <a href="tel:+923008472910" class="text-white/90 font-mono tracking-wide hover:underline">+92 300 8472910</a>
+      </div>
+      <div class="flex items-center gap-4 text-[12px]">
+        <span class="hidden md:inline text-white/80">Official Distributor: Vein Detectors & EMS Supplies</span>
+        <button id="currency-toggle-btn" class="bg-white/10 hover:bg-white/20 text-white px-2.5 py-0.5 rounded-full transition-colors font-mono font-medium">
+          Currency: <strong id="currency-label">USD</strong>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-[#ffffff] border-b border-[#e0e0e0]/70">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-xl bg-[#0a3922] flex items-center justify-center text-white font-bold">
+          <div class="relative w-5 h-5 flex items-center justify-center">
+            <div class="absolute w-5 h-1.5 bg-[#1dbf73] rounded-sm"></div>
+            <div class="absolute w-1.5 h-5 bg-[#1dbf73] rounded-sm"></div>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-[20px] font-bold tracking-tight text-[#0a3922] leading-tight">
+            Asian<span class="text-[#ff643b]">Paramedics</span>
+          </span>
+          <span class="text-[11px] font-semibold text-[#7a7a7a] tracking-wider uppercase">
+            Medical Devices & EMS
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-[#0a3922]">
+        <a href="#categories" class="hover:text-[#ff643b] transition-colors">Categories</a>
+        <a href="#recommended" class="hover:text-[#ff643b] transition-colors flex items-center gap-1">
+          Clinical Recommendations
+          <span class="bg-[#d2f2e3] text-[#0a3922] text-[11px] px-2 py-0.5 rounded-full font-bold">Smart</span>
+        </a>
+        <a href="#products" class="hover:text-[#ff643b] transition-colors">Catalog</a>
+        <a href="#about-us" class="hover:text-[#ff643b] transition-colors">Why Us</a>
+        <a href="#procurement" class="hover:text-[#ff643b] transition-colors">Hospital Bulk</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <button onclick="document.getElementById('search-section').scrollIntoView({behavior: 'smooth'})" class="p-2.5 rounded-full text-[#0a3922] hover:bg-[#eee2ff]/60 transition-colors" title="Search">
+          <i data-lucide="search" class="w-5 h-5"></i>
+        </button>
+
+        <button id="open-cart-btn" class="relative p-2.5 rounded-full text-[#0a3922] hover:bg-[#eee2ff]/60 transition-colors" title="Requisition Cart">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="nav-cart-badge" class="absolute -top-0.5 -right-0.5 bg-[#ff643b] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">1</span>
+        </button>
+
+        <button onclick="openWhatsAppModal()" class="hidden sm:inline-flex items-center gap-2 bg-[#ffffff] text-[#0a3922] border border-[#000000] text-[14px] font-medium py-2 px-4 rounded-[40px] hover:bg-[#0a3922] hover:text-[#ffffff] transition-colors">
+          <i data-lucide="message-circle" class="w-4 h-4 text-[#1dbf73]"></i>
+          <span>WhatsApp Order</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Bleed Dark Hero Section -->
+  <section class="relative bg-[#0a3922] text-[#ffffff] pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Editorial Headline & Actions -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8">
+          <div class="inline-flex items-center gap-2 bg-[#d2f2e3] text-[#0a3922] text-[13px] font-semibold px-3.5 py-1.5 rounded-[9999px]">
+            <span class="w-2 h-2 rounded-full bg-[#1dbf73]"></span>
+            <span>Pakistan & Asia's Dedicated Emergency Medical Hardware</span>
+          </div>
+
+          <h1 class="text-[42px] sm:text-[62px] lg:text-[74px] font-semibold text-[#ffffff] leading-[1.05] tracking-[-0.028em]">
+            Turn Clinical Challenges into <span class="text-[#1dbf73]">Instant Care</span>.
+          </h1>
+
+          <p class="text-[17px] sm:text-[19px] text-[#d2f2e3] font-normal leading-[1.45] max-w-[540px]">
+            Equipping emergency paramedics, hospitals, and outpatient clinics with certified vein locators, resuscitation gear, and surgical instruments. Verified CE & ISO standards with immediate dispatch.
+          </p>
+
+          <!-- Buttons: Coral Filled + Ghost Outline Button -->
+          <div class="flex flex-wrap items-center gap-3.5 sm:gap-4 pt-2">
+            <button onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})" class="bg-[#ff643b] text-[#ffffff] text-[16px] font-semibold px-6 py-3.5 rounded-[40px] hover:bg-[#e5522b] transition-all inline-flex items-center gap-2.5">
+              <span>Browse Medical Equipment</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+
+            <button onclick="openWhatsAppModal()" class="bg-transparent text-[#ffffff] border border-[#ffffff] text-[16px] font-medium px-6 py-3.5 rounded-[40px] hover:bg-white/10 transition-all inline-flex items-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#1dbf73]"></i>
+              <span>Quick WhatsApp Order</span>
+            </button>
+          </div>
+
+          <!-- Trust bullets -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-white/15 text-[13px] sm:text-[14px] text-[#d2f2e3]/90">
+            <div class="flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#1dbf73]"></i>
+              <span>100% Genuine Certified</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="truck" class="w-4 h-4 text-[#1dbf73]"></i>
+              <span>2-Hour Metro Dispatch</span>
+            </div>
+            <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
+              <i data-lucide="file-text" class="w-4 h-4 text-[#1dbf73]"></i>
+              <span>Hospital Invoices & GST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Realistic WhatsApp Phone Mockup -->
+        <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
+          <div class="w-full max-w-[340px] sm:max-w-[360px] bg-[#ffffff] rounded-[24px] overflow-hidden border-[6px] border-[#3d3d3d] text-[#000000]">
+            <!-- Status bar -->
+            <div class="bg-[#0a3922] text-[#ffffff] px-4 py-3 flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-[#1dbf73]/20 flex items-center justify-center font-bold text-[#1dbf73] text-[13px] border border-[#1dbf73]/40">
+                  AP
+                </div>
+                <div>
+                  <div class="text-[14px] font-semibold leading-tight text-white flex items-center gap-1.5">
+                    AsianParamedics
+                    <span class="w-2 h-2 rounded-full bg-[#1dbf73]"></span>
+                  </div>
+                  <div class="text-[11px] text-[#d2f2e3]">Clinical Desk • Online</div>
+                </div>
+              </div>
+              <span class="text-[10px] bg-white/10 px-2 py-0.5 rounded-full text-[#d2f2e3]">24/7 Verified</span>
+            </div>
+
+            <!-- Demo Tabs -->
+            <div class="bg-[#faf7e8] border-b border-[#e0e0e0] px-3 py-1.5 flex items-center justify-between text-[11px] font-medium text-[#0a3922]">
+              <span class="text-[#7a7a7a]">Live Demo:</span>
+              <div class="flex gap-1">
+                <button onclick="setHeroChat('vein')" id="hero-tab-vein" class="px-2 py-0.5 rounded-full bg-[#0a3922] text-white font-semibold">Vein Finder</button>
+                <button onclick="setHeroChat('icu')" id="hero-tab-icu" class="px-2 py-0.5 rounded-full hover:bg-black/5">ICU Supplies</button>
+                <button onclick="setHeroChat('certs')" id="hero-tab-certs" class="px-2 py-0.5 rounded-full hover:bg-black/5">Certificates</button>
+              </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="p-3.5 space-y-3 bg-[#f7f8f9] min-h-[260px] text-[13px]">
+              <div class="text-center">
+                <span class="bg-[#e0e0e0]/70 text-[#7a7a7a] text-[10px] font-medium px-2 py-0.5 rounded-[9999px]">Today 10:42 AM</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <div id="hero-chat-user" class="bg-[#dcf8c6] text-[#000000] p-3 rounded-[16px] rounded-tr-none max-w-[85%] border border-[#1dbf73]/20 text-[13px] leading-[1.35]">
+                  Assalam o Alaikum, do you have the AccuVein Pro Portable Vein Finder in stock for our pediatric clinic?
+                  <div class="text-[10px] text-[#7a7a7a] text-right mt-1">10:43 AM ✓✓</div>
+                </div>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="bg-[#ffffff] text-[#000000] p-3 rounded-[16px] rounded-tl-none max-w-[90%] border border-[#e0e0e0] text-[13px] leading-[1.35]">
+                  <div class="text-[11px] font-bold text-[#1dbf73] mb-1">AsianParamedics Response Desk</div>
+                  <span id="hero-chat-reply">Wa Alaikum Assalam! Yes, Dr. Tariq. We have 18 units in central stock with CE 0123 & 2-year warranty. Can dispatch within 2 hours!</span>
+                  <div class="mt-2 pt-2 border-t border-[#f2f2f2] flex items-center justify-between text-[11px]">
+                    <span id="hero-chat-badge" class="bg-[#d2f2e3] text-[#0a3922] px-2 py-0.5 rounded-full font-semibold text-[10px]">In Stock & Calibrated</span>
+                    <span class="text-[10px] text-[#7a7a7a]">10:44 AM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2.5 bg-[#ffffff] border-t border-[#e0e0e0]">
+              <button onclick="openWhatsAppModal()" class="w-full bg-[#1dbf73] hover:bg-[#18a864] text-white text-[12px] font-semibold py-2 px-3 rounded-[40px] flex items-center justify-center gap-1.5 transition-colors">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                <span>Start WhatsApp Consultation Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="bg-[#ffffff] border-b border-[#e0e0e0]/70 py-8 sm:py-10">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-[#e0e0e0]">
+        <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+          <span class="text-[28px] sm:text-[32px] font-bold text-[#0a3922]">10,000+</span>
+          <span class="text-[13px] text-[#7a7a7a] font-medium mt-1">Clinicians & EMS Equipped</span>
+        </div>
+        <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+          <span class="text-[28px] sm:text-[32px] font-bold text-[#0a3922]">99.4%</span>
+          <span class="text-[13px] text-[#7a7a7a] font-medium mt-1">First-Stick Vein Accuracy</span>
+        </div>
+        <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+          <span class="text-[28px] sm:text-[32px] font-bold text-[#0a3922]">100% Verified</span>
+          <span class="text-[13px] text-[#7a7a7a] font-medium mt-1">CE & ISO 13485 Certified</span>
+        </div>
+        <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+          <span class="text-[28px] sm:text-[32px] font-bold text-[#0a3922]">&lt; 2 Hours</span>
+          <span class="text-[13px] text-[#7a7a7a] font-medium mt-1">Express Metro Dispatch</span>
+        </div>
+        <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+          <span class="text-[28px] sm:text-[32px] font-bold text-[#0a3922]">24/7 Desk</span>
+          <span class="text-[13px] text-[#7a7a7a] font-medium mt-1">Direct Clinical Hotline</span>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-[#e0e0e0] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-wider text-[#7a7a7a]">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#0a3922]"></i>
+          <span>Official Regulatory Standards:</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center md:justify-end gap-3">
+          <span class="bg-[#f2f2f2] text-[#3d3d3d] text-[12px] font-semibold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">CE Mark 0123</span>
+          <span class="bg-[#f2f2f2] text-[#3d3d3d] text-[12px] font-semibold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">ISO 13485:2016</span>
+          <span class="bg-[#f2f2f2] text-[#3d3d3d] text-[12px] font-semibold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">WHO-GMP Compliant</span>
+          <span class="bg-[#f2f2f2] text-[#3d3d3d] text-[12px] font-semibold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">DRAP Registered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section id="search-section" class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+    <div class="bg-[#ffffff] rounded-[24px] p-4 sm:p-6 border border-[#e0e0e0]/80">
+      <div class="flex flex-col gap-4">
+        <div class="relative flex items-center">
+          <div class="absolute left-4 text-[#0a3922]">
+            <i data-lucide="search" class="w-5 h-5"></i>
+          </div>
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search by device name, clinical application (e.g. 'pediatric IV', 'centrifuge', 'resuscitation')..."
+            class="w-full pl-12 pr-10 py-3.5 bg-[#f7f8f9] text-[#000000] placeholder-[#7a7a7a] text-[15px] sm:text-[16px] rounded-[40px] border border-[#e0e0e0] focus:border-[#0a3922] focus:outline-none"
+          />
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <div class="flex flex-wrap items-center gap-1.5 text-[12px] sm:text-[13px]">
+            <span class="text-[#7a7a7a] font-medium mr-1">Trending:</span>
+            <button onclick="setSearchTerm('Vein Finder')" class="px-3 py-1 rounded-[9999px] bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] font-medium">Vein Finder</button>
+            <button onclick="setSearchTerm('Centrifuge')" class="px-3 py-1 rounded-[9999px] bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] font-medium">Centrifuge</button>
+            <button onclick="setSearchTerm('Ambu Bag')" class="px-3 py-1 rounded-[9999px] bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] font-medium">Ambu Bag</button>
+            <button onclick="setSearchTerm('Minor Surgery')" class="px-3 py-1 rounded-[9999px] bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] font-medium">Minor Surgery</button>
+            <button onclick="setSearchTerm('Nitrile')" class="px-3 py-1 rounded-[9999px] bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] font-medium">Nitrile Gloves</button>
+          </div>
+
+          <div class="flex items-center gap-3 sm:gap-4 text-[13px]">
+            <label class="flex items-center gap-1.5 cursor-pointer text-[#3d3d3d]">
+              <input type="checkbox" id="filter-stock" class="w-4 h-4 accent-[#0a3922]" />
+              <span class="font-medium">In Stock Only</span>
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer text-[#3d3d3d]">
+              <input type="checkbox" id="filter-cert" class="w-4 h-4 accent-[#0a3922]" />
+              <span class="font-medium">CE/ISO Certified</span>
+            </label>
+            <select id="sort-select" class="bg-[#f7f8f9] border border-[#e0e0e0] text-[#0a3922] text-[13px] font-medium rounded-[40px] px-3 py-1.5 focus:outline-none">
+              <option value="recommended">Sort: Relevance</option>
+              <option value="rating">Sort: Highest Rated</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-[13px] text-[#7a7a7a] pt-2 border-t border-[#f2f2f2]">
+          <span id="results-count">Showing verified medical devices</span>
+          <button onclick="resetFilters()" class="text-[#ff643b] hover:underline font-semibold text-[12px]">Reset filters</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid -->
+  <section id="categories" class="py-12 sm:py-16">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 bg-[#d2f2e3] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px]">
+            <span>Curated Departments</span>
+          </div>
+          <h2 class="text-[32px] sm:text-[42px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
+            Explore by Medical Specialty
+          </h2>
+          <p class="text-[16px] text-[#3d3d3d] max-w-[600px]">
+            Every device is pre-tested and certified to meet high clinical standards across emergency care, diagnostics, and outpatient treatments.
+          </p>
+        </div>
+        <button onclick="selectCategory('all')" id="cat-btn-all" class="text-[14px] font-semibold px-4 py-2 rounded-[40px] bg-[#0a3922] text-white">
+          View All Categories
+        </button>
+      </div>
+
+      <div id="category-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalized Clinical Recommendations Engine -->
+  <section id="recommended" class="py-12 sm:py-16 bg-[#ffffff] border-y border-[#e0e0e0]/70">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 bg-[#faf7e8] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ff643b]"></i>
+          <span>Clinical Match Intelligence</span>
+        </div>
+        <h2 class="text-[32px] sm:text-[42px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
+          Tailored Equipment by Medical Role
+        </h2>
+        <p class="text-[16px] text-[#3d3d3d] max-w-[620px]">
+          Select your practice environment to load device bundles calibrated specifically for your clinical protocol and regulatory requirements.
+        </p>
+      </div>
+
+      <!-- Persona Selector Tabs -->
+      <div id="persona-tabs-container" class="flex flex-wrap gap-2.5 sm:gap-3">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Active Persona Context Card -->
+      <div id="persona-context-card" class="bg-[#e4f7ee] rounded-[24px] p-6 sm:p-8 space-y-4">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Persona Recommended Products Grid -->
+      <div id="persona-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog Section -->
+  <section id="products" class="py-12 sm:py-16">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 bg-[#d2f2e3] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px]">
+          <span>Paramedic & Hospital Inventory</span>
+        </div>
+        <h2 class="text-[32px] sm:text-[42px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
+          Verified Medical Equipment Catalog
+        </h2>
+        <p class="text-[16px] text-[#3d3d3d] max-w-[620px]">
+          Direct procurement of genuine, factory-calibrated devices. Backed by certified warranties, local replacement parts, and emergency clinical dispatch.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div id="catalog-filter-tabs" class="flex items-center gap-2 overflow-x-auto pb-2">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Clinicians Rely on Us (Toolkit Section) -->
+  <section id="about-us" class="py-16 sm:py-20 bg-[#eee2ff]/60 border-t border-[#e0e0e0]/70">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <div class="max-w-[700px] space-y-3">
+        <div class="inline-flex items-center gap-2 bg-[#d2f2e3] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px]">
+          <span>Clinical Reliability</span>
+        </div>
+        <h2 class="text-[32px] sm:text-[44px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
+          Why 10,000+ Paramedics & Clinics Rely on AsianParamedics
+        </h2>
+        <p class="text-[16px] text-[#3d3d3d] leading-[1.5]">
+          Medical devices shouldn't fail when a patient's life is on the line. We combine certified global hardware with rapid local clinical support.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Left: Toolkit Feature List -->
+        <div class="lg:col-span-7 space-y-3">
+          <div class="p-5 sm:p-6 rounded-[16px] bg-[#ffffff] border border-[#460095]/20">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-[#460095] text-white flex items-center justify-center shrink-0">
+                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-[18px] sm:text-[20px] font-medium text-[#0a3922]">Direct Manufacturer Verification & CE Compliance</h3>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#d2f2e3] text-[#0a3922]">100% Audited</span>
+                </div>
+                <p class="text-[14px] text-[#3d3d3d]">Every vein locator, centrifuge, and resuscitation kit undergoes electrical and optical testing prior to dispatch with certified calibration documentation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-[16px] bg-[#ffffff] border border-[#e0e0e0]">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-[#460095]/10 text-[#460095] flex items-center justify-center shrink-0">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-[18px] sm:text-[20px] font-medium text-[#0a3922]">Local In-Country Replacement Parts & Service Center</h3>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#d2f2e3] text-[#0a3922]">48h Turnaround</span>
+                </div>
+                <p class="text-[14px] text-[#3d3d3d]">Zero international shipping delay for repairs. Certified biomedical technicians in Lahore & Islamabad stock official replacement sensors and batteries.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 rounded-[16px] bg-[#ffffff] border border-[#e0e0e0]">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-[#460095]/10 text-[#460095] flex items-center justify-center shrink-0">
+                <i data-lucide="truck" class="w-5 h-5"></i>
+              </div>
+              <div class="space-y-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-[18px] sm:text-[20px] font-medium text-[#0a3922]">Emergency 2-Hour Metropolitan Ambulance Dispatch</h3>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#d2f2e3] text-[#0a3922]">&lt; 120 Min Urgent</span>
+                </div>
+                <p class="text-[14px] text-[#3d3d3d]">Critical patient resuscitation and hemorrhage supplies can be expedited across hospital clusters via dedicated paramedic logistics couriers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Clinician Portrait -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-[24px] overflow-hidden border border-[#0a3922]/10 bg-[#0a3922]">
+            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Doctor examining medical equipment" class="w-full h-[380px] object-cover mix-blend-luminosity opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#0a3922] via-[#0a3922]/40 to-[#1dbf73]/30"></div>
+            <div class="absolute inset-x-4 bottom-4 bg-[#ffffff]/95 backdrop-blur-xs p-5 rounded-[16px] border border-[#e0e0e0]">
+              <div class="flex items-center gap-1 text-[#ff643b] mb-1">
+                ★★★★★
+              </div>
+              <p class="text-[13px] text-[#000000] italic leading-snug mb-2">
+                "The AccuVein Pro has dropped our pediatric cannulation attempts from 3 to 1. An indispensable tool for our hospital emergency unit."
+              </p>
+              <div class="flex items-center justify-between text-[11px] text-[#7a7a7a]">
+                <span class="font-bold text-[#0a3922]">Dr. Tariq Mahmood, FRCS</span>
+                <span>Trauma Surgery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospital Bulk Card -->
+      <div id="procurement" class="bg-[#0a3922] text-white rounded-[24px] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="bg-[#1dbf73] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px]">Institutional Procurement & Tenders</span>
+          <h3 class="text-[26px] sm:text-[32px] font-bold text-white leading-tight">Equipping a Hospital, Clinic, or Ambulance Fleet?</h3>
+          <p class="text-[15px] text-[#d2f2e3] max-w-[550px]">Receive tiered institutional volume pricing, formal quotation sheets, and 30-day payment credit terms for registered medical centers.</p>
+        </div>
+        <button onclick="openWhatsAppModal('Hospital Bulk Requisition')" class="bg-[#ff643b] hover:bg-[#e5522b] text-white text-[15px] font-semibold px-6 py-3 rounded-[40px] flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Request Hospital Quotation</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a3922] text-[#ffffff] pt-16 pb-12 border-t border-white/10">
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-[#ffffff] flex items-center justify-center font-bold">
+              <div class="relative w-5 h-5 flex items-center justify-center">
+                <div class="absolute w-5 h-1.5 bg-[#0a3922] rounded-sm"></div>
+                <div class="absolute w-1.5 h-5 bg-[#0a3922] rounded-sm"></div>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[20px] font-bold text-white leading-tight">Asian<span class="text-[#ff643b]">Paramedics</span></span>
+              <span class="text-[11px] font-semibold text-[#d2f2e3] tracking-wider uppercase">Medical Devices & EMS Supplies</span>
+            </div>
+          </div>
+          <p class="text-[14px] text-[#d2f2e3] leading-[1.6]">
+            Certified supplier of infrared vein finders, resuscitation equipment, clinical centrifuges, and surgical sets for hospitals, clinics, and EMS across Asia.
+          </p>
+          <button onclick="openWhatsAppModal()" class="bg-[#1dbf73] hover:bg-[#18a864] text-[#0a3922] font-bold text-[13px] px-4 py-2 rounded-[40px] flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>24/7 Clinical Support Hotline</span>
+          </button>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-[15px] font-bold text-white uppercase tracking-wider">Clinical Catalog</h4>
+          <ul class="space-y-2 text-[14px] text-[#d2f2e3]">
+            <li><button onclick="selectCategory('vein-finders')" class="hover:text-white">Infrared Vein Detectors</button></li>
+            <li><button onclick="selectCategory('patient-monitoring')" class="hover:text-white">Pulse Oximeters & BP</button></li>
+            <li><button onclick="selectCategory('surgical-instruments')" class="hover:text-white">Minor Surgery Instruments</button></li>
+            <li><button onclick="selectCategory('emergency-trauma')" class="hover:text-white">Resuscitation Ambu Bags</button></li>
+            <li><button onclick="selectCategory('lab-equipment')" class="hover:text-white">Benchtop Centrifuges</button></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-[15px] font-bold text-white uppercase tracking-wider">Procurement</h4>
+          <ul class="space-y-2 text-[14px] text-[#d2f2e3]">
+            <li><a href="#procurement" class="hover:text-white">Hospital Bulk Orders</a></li>
+            <li><a href="#about-us" class="hover:text-white">CE & ISO Standards</a></li>
+            <li><a href="#about-us" class="hover:text-white">Warranty Coverage</a></li>
+            <li><a href="#procurement" class="hover:text-white">Tender Proforma</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-[15px] font-bold text-white uppercase tracking-wider">Distribution Desk</h4>
+          <div class="space-y-2 text-[13px] text-[#d2f2e3]">
+            <p><strong>Hotline:</strong> +92 300 8472910</p>
+            <p><strong>Email:</strong> orders@asianparamedics.com</p>
+            <p><strong>Hubs:</strong> Lahore & Islamabad Distribution, Pakistan</p>
+            <p><strong>Emergency Ambulance Dispatch:</strong> 24/7/365</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-white/10 text-[12px] text-[#d2f2e3]/70 leading-relaxed">
+        <strong class="text-white">Medical Device Regulatory Notice:</strong> The devices and surgical sets on AsianParamedics.com are designed for licensed medical professionals, paramedics, diagnostic laboratories, and health institutions. Distributed in compliance with CE Mark, ISO 13485 quality management, and DRAP regulations.
+      </div>
+
+      <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[13px] text-[#d2f2e3]/80 gap-3">
+        <div>© 2026 Asian Paramedics. All rights reserved.</div>
+        <div>Cash on Delivery (COD) Available • Bank Wire & PO Accepted</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer-modal" class="fixed inset-0 z-50 overflow-hidden bg-black/50 backdrop-blur-xs justify-end hidden">
+    <div class="w-full max-w-[460px] bg-[#ffffff] h-full shadow-2xl flex flex-col justify-between text-[#000000]">
+      <div class="p-5 border-b border-[#e0e0e0] flex items-center justify-between bg-[#f7f8f9]">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-[#0a3922] text-white flex items-center justify-center">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h3 class="text-[18px] font-bold text-[#0a3922]">Requisition Cart</h3>
+            <span id="cart-items-count-label" class="text-[12px] text-[#7a7a7a]">1 item</span>
+          </div>
+        </div>
+        <button onclick="closeCart()" class="w-8 h-8 rounded-full bg-[#ffffff] border border-[#e0e0e0] flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div id="cart-items-list" class="flex-1 overflow-y-auto p-5 space-y-3">
+        <!-- Injected via JS -->
+      </div>
+
+      <div class="p-5 border-t border-[#e0e0e0] bg-[#f7f8f9] space-y-3">
+        <div class="flex justify-between text-[16px] font-bold text-[#0a3922]">
+          <span>Requisition Subtotal</span>
+          <span id="cart-subtotal-price">$680</span>
+        </div>
+        <button onclick="transmitCartWhatsApp()" class="w-full py-3 px-4 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[14px] font-semibold flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Send Order to WhatsApp Hotline</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div id="quickview-modal" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs items-center justify-center p-4 hidden">
+    <div class="relative bg-[#ffffff] rounded-[24px] max-w-[800px] w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-[#e0e0e0]">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#f2f2f2] flex items-center justify-center">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="quickview-content">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Consultation Modal -->
+  <div id="whatsapp-modal" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs items-center justify-center p-4 hidden">
+    <div class="relative bg-[#ffffff] rounded-[24px] max-w-[540px] w-full overflow-hidden border border-[#e0e0e0]">
+      <div class="bg-[#0a3922] text-white p-5 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#1dbf73]/20 flex items-center justify-center text-[#1dbf73]">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-[17px] font-bold">AsianParamedics Clinical Hotline</h3>
+            <span class="text-[12px] text-[#d2f2e3]">+92 300 8472910 • Active Desk</span>
+          </div>
+        </div>
+        <button onclick="closeWhatsAppModal()" class="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleWhatsAppFormSubmit(event)" class="p-6 space-y-4 text-[13px]">
+        <div>
+          <label class="font-medium text-[#0a3922] block mb-1">Your Name / Title:</label>
+          <input type="text" id="wa-input-name" required placeholder="e.g., Dr. Farhan / Nurse In-charge" class="w-full px-3 py-2 bg-[#f7f8f9] rounded-lg border border-[#e0e0e0]">
+        </div>
+        <div>
+          <label class="font-medium text-[#0a3922] block mb-1">Hospital / Clinic / Organization:</label>
+          <input type="text" id="wa-input-facility" placeholder="e.g., District Hospital Emergency" class="w-full px-3 py-2 bg-[#f7f8f9] rounded-lg border border-[#e0e0e0]">
+        </div>
+        <div>
+          <label class="font-medium text-[#0a3922] block mb-1">Inquiry / Requisition Message:</label>
+          <textarea id="wa-input-msg" rows="4" required class="w-full p-3 bg-[#f7f8f9] rounded-lg border border-[#e0e0e0] leading-relaxed"></textarea>
+        </div>
+        <div class="flex justify-end gap-3 pt-2">
+          <button type="button" onclick="closeWhatsAppModal()" class="px-4 py-2 text-[#7a7a7a]">Cancel</button>
+          <button type="submit" class="bg-[#1dbf73] hover:bg-[#18a864] text-white px-6 py-2.5 rounded-[40px] font-semibold flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>Launch WhatsApp Web / App</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom Notification Banner -->
+  <aside id="sticky-notification" class="fixed bottom-4 right-4 z-40 max-w-[420px] w-[calc(100%-32px)] sm:w-auto bg-[#0a3922] text-white p-4 sm:p-5 rounded-[16px] border border-white/15 shadow-2xl">
+    <div class="flex items-start justify-between gap-3 mb-2">
+      <div>
+        <div class="text-[15px] font-semibold text-white flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-4 h-4 text-[#1dbf73]"></i>
+          <span>Clinical Equipment Subsidy</span>
+        </div>
+        <div class="text-[13px] text-[#d2f2e3] mt-0.5">
+          Quarterly 15% Institutional Rebate Active
+        </div>
+      </div>
+      <button onclick="document.getElementById('sticky-notification').remove()" class="text-[#a6a6a6] hover:text-white p-1">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+      <div class="flex items-center gap-1 font-mono text-[12px] font-bold text-[#faf7e8]">
+        <span class="bg-black/30 px-2 py-1 rounded">14d</span> :
+        <span class="bg-black/30 px-2 py-1 rounded">08h</span> :
+        <span class="bg-black/30 px-2 py-1 rounded">32m</span>
+      </div>
+      <button onclick="selectCategory('vein-finders'); document.getElementById('products').scrollIntoView({behavior: 'smooth'}); showToast('15% Rebate Code AP-CLINICAL15 Applied');" class="bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] text-[13px] font-bold py-2 px-4 rounded-[40px]">
+        Claim 15% Rebate
+      </button>
+    </div>
+  </aside>
+
+  <!-- Complete Javascript Application Engine -->
+  <script>
+    // Data definition matching AsianParamedics.com
+    const CATEGORIES = [
+      { id: 'vein-finders', name: 'Vascular Access & Vein Finders', count: 14, color: '#d2f2e3', icon: 'activity', desc: 'Infrared NIR handheld and stand vein locators for painless pediatric and geriatric IV access.' },
+      { id: 'patient-monitoring', name: 'Patient Monitoring & Vitals', count: 28, color: '#ccf0f8', icon: 'heart-pulse', desc: 'Clinical rechargeable pulse oximeters, digital BP monitors, and multi-parameter vital signs screens.' },
+      { id: 'surgical-instruments', name: 'Surgical & Minor Op Sets', count: 42, color: '#fdf0ff', icon: 'scissors', desc: 'German 420-grade stainless steel minor surgery kits, trauma shears, and titanium forceps.' },
+      { id: 'emergency-trauma', name: 'Emergency Resuscitation & Trauma', count: 36, color: '#ffede8', icon: 'cross', desc: 'Autoclavable silicone Ambu bags, CAT Gen-7 tactical tourniquets, and portable electric phlegm aspirators.' },
+      { id: 'lab-equipment', name: 'Laboratory Diagnostic Devices', count: 22, color: '#faf7e8', icon: 'flask-conical', desc: 'Benchtop clinical centrifuges 4000 RPM, micropipettes, and hematology tools.' },
+      { id: 'paramedic-bags', name: 'Paramedic Bags & Trauma Kits', count: 19, color: '#e4f7ee', icon: 'briefcase', desc: '1000D waterproof ballistic Cordura EMS response backpacks with O2 cylinder slots.' },
+      { id: 'clinical-training', name: 'Medical Skills Simulators', count: 16, color: '#d2f2e3', icon: 'graduation-cap', desc: 'Venipuncture IV practice training arms, CPR mannequins, and OSCE examination sets.' },
+      { id: 'consumables-ppe', name: 'Consumables & Infection Control', count: 65, color: '#ccf0f8', icon: 'shield-check', desc: 'Chemo-tested cobalt nitrile exam gloves, sterile IV cannulas, and surgical disposables.' }
+    ];
+
+    const PRODUCTS = [
+      {
+        id: 'ap-vf-900',
+        name: 'AsianParamedics AccuVein Pro Portable Vein Finder',
+        category: 'vein-finders',
+        tagline: 'Dual Near-Infrared projection for 98% first-stick pediatric and geriatric cannulation success.',
+        priceUSD: 680,
+        pricePKR: 189000,
+        rating: 4.9,
+        reviewsCount: 142,
+        image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80',
+        badge: 'Flagship Device',
+        stockCount: 18,
+        certifications: ['CE 0123', 'ISO 13485', 'DRAP Registered'],
+        warranty: '2 Years Full Official Warranty',
+        description: 'Emits harmless near-infrared light absorbed by subcutaneous blood hemoglobin to project real-time vascular maps directly onto patient skin. Reduces cannulation pain, anxiety, and tissue hematoma.'
+      },
+      {
+        id: 'ap-oxi-400',
+        name: 'OxiPulse Pro Rechargeable OLED Finger Oximeter',
+        category: 'patient-monitoring',
+        tagline: 'Hospital-grade Perfusion Index (PI) + plethysmogram graph in rugged IP22 casing.',
+        priceUSD: 42,
+        pricePKR: 11800,
+        rating: 4.8,
+        reviewsCount: 310,
+        image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+        badge: 'Best Seller',
+        stockCount: 84,
+        certifications: ['CE Mark', 'ISO 9001'],
+        warranty: '1 Year Instant Replacement',
+        description: 'USB-C rechargeable pulse oximeter for clinical triage. Highly reliable even under low perfusion peripheries and motion artifacts.'
+      },
+      {
+        id: 'ap-surg-24',
+        name: 'Master Trauma & Minor Surgery Kit (24-Piece German Steel)',
+        category: 'surgical-instruments',
+        tagline: 'Autoclavable grade 420 AISI medical stainless steel in ballistic zippered case.',
+        priceUSD: 145,
+        pricePKR: 40500,
+        rating: 4.9,
+        reviewsCount: 96,
+        image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80',
+        badge: 'Clinical Grade',
+        stockCount: 32,
+        certifications: ['ISO 13485', 'Autoclave Safe 134°C'],
+        warranty: '5 Years Steel Guarantee',
+        description: 'Comprehensive surgical ensemble tailored for wound debridement, emergency suturing, and minor outpatient operations.'
+      },
+      {
+        id: 'ap-ambu-100',
+        name: 'Paramedic Silicone Resuscitator Bag (Adult / Child)',
+        category: 'emergency-trauma',
+        tagline: '100% medical-grade autoclavable liquid silicone with pressure limitation safety valve.',
+        priceUSD: 65,
+        pricePKR: 18200,
+        rating: 4.9,
+        reviewsCount: 118,
+        image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+        badge: 'Life Support',
+        stockCount: 45,
+        certifications: ['CE 0434', 'ISO 10651-4'],
+        warranty: '2 Years Warranty',
+        description: 'Standard emergency resuscitation device for respiratory arrest, crash carts, and ambulance patient transport.'
+      },
+      {
+        id: 'ap-lab-4000',
+        name: 'CentriSpin 4000 Clinical Benchtop Centrifuge',
+        category: 'lab-equipment',
+        tagline: 'Brushless DC motor 4000 RPM for PRP, blood serum, and pathology separation.',
+        priceUSD: 340,
+        pricePKR: 94800,
+        rating: 4.8,
+        reviewsCount: 52,
+        image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80',
+        badge: 'Lab Grade',
+        stockCount: 12,
+        certifications: ['CE Mark', 'IEC 61010-1'],
+        warranty: '2 Years Full Warranty',
+        description: 'Precision laboratory centrifuge with 8 x 15ml angle rotor and electronic safety lid-lock.'
+      },
+      {
+        id: 'ap-ems-bag',
+        name: 'Paramedic Elite 1000D Waterproof Trauma Backpack',
+        category: 'paramedic-bags',
+        tagline: 'Color-coded modular pouches, high-vis 3M reflective trim, and oxygen tank sleeve.',
+        priceUSD: 120,
+        pricePKR: 33500,
+        rating: 4.9,
+        reviewsCount: 88,
+        image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80',
+        badge: 'EMS Standard',
+        stockCount: 26,
+        certifications: ['Mil-Spec 1000D', 'EN 1789'],
+        warranty: '3 Years Warranty',
+        description: 'Engineered for mobile ambulance crews, industrial disaster rescue, and rapid trauma triage.'
+      },
+      {
+        id: 'ap-cat-gen7',
+        name: 'Tactical Combat Application Tourniquet (CAT Gen-7)',
+        category: 'emergency-trauma',
+        tagline: 'Proven arterial occlusion windlass system for massive extremity hemorrhage control.',
+        priceUSD: 36,
+        pricePKR: 9900,
+        rating: 5.0,
+        reviewsCount: 165,
+        image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80',
+        badge: 'Life Saving',
+        stockCount: 110,
+        certifications: ['CoTCCC Approved', 'CE 0123'],
+        warranty: 'Lifetime Warranty',
+        description: 'Single-handed rapid application tourniquet stopping fatal limb arterial bleed in under 60 seconds.'
+      },
+      {
+        id: 'ap-arm-trainer',
+        name: 'AnatomyPro Venipuncture IV Practice Arm',
+        category: 'clinical-training',
+        tagline: 'Realistic venous resistance with genuine blood flashback for nurse and paramedic training.',
+        priceUSD: 165,
+        pricePKR: 46000,
+        rating: 4.8,
+        reviewsCount: 74,
+        image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+        badge: 'Skill Simulator',
+        stockCount: 20,
+        certifications: ['ISO 9001 Certified'],
+        warranty: '1 Year Warranty',
+        description: 'Anatomically accurate arm simulator with cephalic, basilic, and median cubital vein canals.'
+      }
+    ];
+
+    const PERSONAS = [
+      {
+        id: 'paramedic',
+        title: 'Emergency Paramedic / EMS Crew',
+        badge: 'Field Triage & Resuscitation',
+        icon: 'ambulance',
+        context: 'Every second counts during trauma response. Our field-certified tools feature 1000D water-tight enclosures, USB-C recharging, and CoTCCC-tested arterial bleed management.',
+        benefit: 'Emergency dispatch ready with same-day shipment within 2 hours across major metro clusters.',
+        productIds: ['ap-vf-900', 'ap-cat-gen7', 'ap-ambu-100', 'ap-ems-bag']
+      },
+      {
+        id: 'clinic-gp',
+        title: 'Clinic & General Practitioner',
+        badge: 'OPD Diagnostic Precision',
+        icon: 'stethoscope',
+        context: 'Enhance clinical diagnostic accuracy and reduce patient hospital referrals with precision German surgical sets and ESH-validated vitals.',
+        benefit: 'Includes batch calibration certificates and 3-year local warranty.',
+        productIds: ['ap-oxi-400', 'ap-surg-24', 'ap-vf-900', 'ap-ambu-100']
+      },
+      {
+        id: 'hospital-icu',
+        title: 'Hospital & ICU Department',
+        badge: 'Institutional Procurement',
+        icon: 'building-2',
+        context: 'Designed to cut pediatric and oncology cannulation failure rates by 80% while satisfying DRAP and ISO 13485 audit standards.',
+        benefit: 'Official GST tax invoice issued with hospital purchase order (PO) terms.',
+        productIds: ['ap-vf-900', 'ap-ambu-100', 'ap-surg-24', 'ap-lab-4000']
+      }
+    ];
+
+    // State Variables
+    let activeCurrency = 'USD';
+    let selectedCategory = 'all';
+    let activePersonaId = 'paramedic';
+    let cart = [{ product: PRODUCTS[0], quantity: 1 }];
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toast-text');
+      text.innerText = msg;
+      toast.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('flex', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => toast.classList.add('hidden'), 300);
+      }, 3000);
+    }
+
+    function formatPrice(usd, pkr) {
+      if (activeCurrency === 'PKR') {
+        return 'PKR ' + pkr.toLocaleString();
+      }
+      return '$' + usd.toLocaleString();
+    }
+
+    // Currency toggle
+    document.getElementById('currency-toggle-btn').addEventListener('click', () => {
+      activeCurrency = activeCurrency === 'USD' ? 'PKR' : 'USD';
+      document.getElementById('currency-label').innerText = activeCurrency;
+      renderProducts();
+      renderPersona();
+      updateCartDrawer();
+    });
+
+    // Render Categories
+    function renderCategories() {
+      const container = document.getElementById('category-cards-container');
+      container.innerHTML = CATEGORIES.map(cat => `
+        <div onclick="selectCategory('${cat.id}')" style="background-color: ${cat.color}" class="p-6 rounded-[24px] cursor-pointer flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-10 h-10 rounded-[14px] bg-white flex items-center justify-center text-[#0a3922]">
+                <i data-lucide="${cat.icon}" class="w-5 h-5"></i>
+              </div>
+              <span class="bg-white/80 text-[#0a3922] text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">${cat.count} Devices</span>
+            </div>
+            <h3 class="text-[19px] font-bold text-[#0a3922] leading-tight mb-2">${cat.name}</h3>
+            <p class="text-[13px] text-[#3d3d3d] leading-[1.4] line-clamp-2">${cat.desc}</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-black/10 flex items-center justify-between text-[12px] font-bold text-[#0a3922]">
+            <span>Filter Category</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectCategory(catId) {
+      selectedCategory = catId;
+      document.getElementById('cat-btn-all').className = catId === 'all'
+        ? 'text-[14px] font-semibold px-4 py-2 rounded-[40px] bg-[#0a3922] text-white'
+        : 'text-[14px] font-semibold px-4 py-2 rounded-[40px] bg-white text-[#0a3922] border border-black';
+      renderCatalogFilterTabs();
+      renderProducts();
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function renderCatalogFilterTabs() {
+      const container = document.getElementById('catalog-filter-tabs');
+      const tabs = [
+        { id: 'all', label: 'All Equipment' },
+        ...CATEGORIES.map(c => ({ id: c.id, label: c.name }))
+      ];
+      container.innerHTML = tabs.map(t => `
+        <button onclick="selectCategory('${t.id}')" class="px-4 py-2 rounded-[40px] text-[13px] font-semibold whitespace-nowrap transition-all ${
+          selectedCategory === t.id ? 'bg-[#0a3922] text-white' : 'bg-white text-[#0a3922] border border-[#e0e0e0]'
+        }">${t.label}</button>
+      `).join('');
+    }
+
+    // Render Products Grid
+    function renderProducts() {
+      const searchVal = document.getElementById('search-input').value.toLowerCase().trim();
+      const inStockOnly = document.getElementById('filter-stock').checked;
+      const certOnly = document.getElementById('filter-cert').checked;
+      const sortBy = document.getElementById('sort-select').value;
+
+      let filtered = PRODUCTS.filter(p => {
+        if (selectedCategory !== 'all' && p.category !== selectedCategory) return false;
+        if (inStockOnly && p.stockCount <= 0) return false;
+        if (certOnly && !p.certifications.some(c => c.includes('CE') || c.includes('ISO'))) return false;
+        if (searchVal) {
+          const match = p.name.toLowerCase().includes(searchVal) ||
+                        p.tagline.toLowerCase().includes(searchVal) ||
+                        p.description.toLowerCase().includes(searchVal) ||
+                        p.category.toLowerCase().includes(searchVal);
+          if (!match) return false;
+        }
+        return true;
+      });
+
+      if (sortBy === 'price-asc') filtered.sort((a, b) => a.priceUSD - b.priceUSD);
+      else if (sortBy === 'price-desc') filtered.sort((a, b) => b.priceUSD - a.priceUSD);
+      else if (sortBy === 'rating') filtered.sort((a, b) => b.rating - a.rating);
+
+      document.getElementById('results-count').innerText = `Showing ${filtered.length} verified medical devices`;
+
+      const grid = document.getElementById('products-grid');
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-3 text-center py-12 bg-white rounded-[24px] border border-[#e0e0e0]">
+          <h4 class="text-[18px] font-bold text-[#0a3922]">No medical devices found</h4>
+          <p class="text-[14px] text-[#7a7a7a] mt-1">Try relaxing your search terms or filters.</p>
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => `
+        <div class="bg-[#ffffff] rounded-[24px] border border-[#e0e0e0] p-6 flex flex-col justify-between hover:border-[#0a3922] transition-colors">
+          <div>
+            <div class="relative w-full h-52 rounded-[16px] overflow-hidden bg-[#f7f8f9] mb-4">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+              <span class="absolute top-2.5 left-2.5 bg-[#0a3922] text-white text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">${p.badge}</span>
+              <span class="absolute top-2.5 right-2.5 bg-white text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-[9999px] border border-[#e0e0e0]">${p.stockCount} In Stock</span>
+            </div>
+            <div class="flex items-center justify-between text-[12px] text-[#7a7a7a] mb-1.5">
+              <span>${p.certifications[0]}</span>
+              <span class="text-[#ff643b] font-bold">★ ${p.rating} (${p.reviewsCount})</span>
+            </div>
+            <h3 class="text-[17px] font-bold text-[#0a3922] leading-snug mb-1">${p.name}</h3>
+            <p class="text-[13px] text-[#3d3d3d] leading-[1.4] mb-3 line-clamp-2">${p.tagline}</p>
+          </div>
+          <div class="pt-4 border-t border-[#f2f2f2] space-y-3">
+            <div class="flex items-baseline justify-between">
+              <span class="text-[22px] font-bold text-[#0a3922]">${formatPrice(p.priceUSD, p.pricePKR)}</span>
+              <span class="text-[11px] text-[#1dbf73] font-semibold">Local Warranty</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openQuickView('${p.id}')" class="py-2 px-3 rounded-[40px] border border-[#000000] text-[#0a3922] hover:bg-[#faf7e8] text-[13px] font-semibold">Specs</button>
+              <button onclick="addToCart('${p.id}')" class="py-2 px-3 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[13px] font-semibold">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // Render Personalized Recommendations
+    function renderPersona() {
+      const tabsContainer = document.getElementById('persona-tabs-container');
+      tabsContainer.innerHTML = PERSONAS.map(p => `
+        <button onclick="setPersona('${p.id}')" class="px-5 py-2.5 rounded-[40px] text-[14px] font-semibold transition-all ${
+          p.id === activePersonaId ? 'bg-[#0a3922] text-white' : 'bg-[#faf7e8] text-[#0a3922] border border-[#e0e0e0]'
+        }">${p.title}</button>
+      `).join('');
+
+      const persona = PERSONAS.find(p => p.id === activePersonaId) || PERSONAS[0];
+      const contextCard = document.getElementById('persona-context-card');
+      contextCard.innerHTML = `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <span class="bg-[#0a3922] text-white text-[12px] font-bold px-3 py-1 rounded-[9999px]">${persona.badge}</span>
+            <h3 class="text-[20px] font-bold text-[#0a3922]">${persona.title} Protocol Bundle</h3>
+          </div>
+          <span class="text-[12px] font-bold text-[#0a3922] bg-white px-3 py-1 rounded-[9999px] border border-black/10">✓ Certified Clinical Match</span>
+        </div>
+        <p class="text-[15px] text-[#3d3d3d] leading-[1.5] max-w-[800px]">${persona.context}</p>
+        <div class="text-[13px] font-semibold text-[#0a3922]">
+          <span class="text-[#ff643b]">Procurement Benefit:</span> <span class="text-[#3d3d3d] font-normal">${persona.benefit}</span>
+        </div>
+      `;
+
+      const matchedProducts = PRODUCTS.filter(p => persona.productIds.includes(p.id));
+      const productsGrid = document.getElementById('persona-products-grid');
+      productsGrid.innerHTML = matchedProducts.map(p => `
+        <div class="bg-white rounded-[24px] border border-[#e0e0e0] p-5 flex flex-col justify-between hover:border-[#0a3922] transition-colors">
+          <div>
+            <div class="relative w-full h-40 rounded-[14px] overflow-hidden bg-[#f7f8f9] mb-3">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+              <span class="absolute top-2 right-2 bg-white/90 text-[#0a3922] text-[10px] font-bold px-2 py-0.5 rounded">98% Match</span>
+            </div>
+            <h4 class="text-[15px] font-bold text-[#0a3922] leading-snug line-clamp-2 mb-1">${p.name}</h4>
+            <p class="text-[12px] text-[#7a7a7a] line-clamp-2 mb-2">${p.tagline}</p>
+          </div>
+          <div class="pt-3 border-t border-[#f2f2f2] flex items-center justify-between">
+            <span class="text-[18px] font-bold text-[#0a3922]">${formatPrice(p.priceUSD, p.pricePKR)}</span>
+            <button onclick="addToCart('${p.id}')" class="py-1.5 px-3 rounded-[40px] bg-[#ff643b] text-white text-[12px] font-semibold">Add</button>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    function setPersona(id) {
+      activePersonaId = id;
+      renderPersona();
+    }
+
+    // Hero WhatsApp Interactive Tabs
+    function setHeroChat(mode) {
+      const btnVein = document.getElementById('hero-tab-vein');
+      const btnIcu = document.getElementById('hero-tab-icu');
+      const btnCerts = document.getElementById('hero-tab-certs');
+      const chatUser = document.getElementById('hero-chat-user');
+      const chatReply = document.getElementById('hero-chat-reply');
+      const chatBadge = document.getElementById('hero-chat-badge');
+
+      btnVein.className = 'px-2 py-0.5 rounded-full hover:bg-black/5';
+      btnIcu.className = 'px-2 py-0.5 rounded-full hover:bg-black/5';
+      btnCerts.className = 'px-2 py-0.5 rounded-full hover:bg-black/5';
+
+      if (mode === 'vein') {
+        btnVein.className = 'px-2 py-0.5 rounded-full bg-[#0a3922] text-white font-semibold';
+        chatUser.innerHTML = `Assalam o Alaikum, do you have the AccuVein Pro Portable Vein Finder in stock for our pediatric clinic?<div class="text-[10px] text-[#7a7a7a] text-right mt-1">10:43 AM ✓✓</div>`;
+        chatReply.innerText = "Wa Alaikum Assalam! Yes, Dr. Tariq. We have 18 units in central stock with CE 0123 & 2-year warranty. Can dispatch within 2 hours!";
+        chatBadge.innerText = "In Stock & Calibrated";
+      } else if (mode === 'icu') {
+        btnIcu.className = 'px-2 py-0.5 rounded-full bg-[#0a3922] text-white font-semibold';
+        chatUser.innerHTML = `Need urgent hospital quotation for 5x Silicone Resuscitator Bags & 20x Nitrile Glove cases.<div class="text-[10px] text-[#7a7a7a] text-right mt-1">10:43 AM ✓✓</div>`;
+        chatReply.innerText = "Requisition received! Official GST hospital invoice prepared at wholesale tier with free temperature-controlled ambulance transport.";
+        chatBadge.innerText = "Hospital Tier Active";
+      } else {
+        btnCerts.className = 'px-2 py-0.5 rounded-full bg-[#0a3922] text-white font-semibold';
+        chatUser.innerHTML = `Can we get an official ISO 13485 verification sheet for the CentriSpin 4000 centrifuge?<div class="text-[10px] text-[#7a7a7a] text-right mt-1">10:43 AM ✓✓</div>`;
+        chatReply.innerText = "Certainly! Sending the batch calibration certificate, CE conformity dossier, and DRAP clearance letter right now.";
+        chatBadge.innerText = "Regulatory Verified";
+      }
+    }
+
+    // Search and Filters
+    document.getElementById('search-input').addEventListener('input', renderProducts);
+    document.getElementById('filter-stock').addEventListener('change', renderProducts);
+    document.getElementById('filter-cert').addEventListener('change', renderProducts);
+    document.getElementById('sort-select').addEventListener('change', renderProducts);
+
+    function setSearchTerm(term) {
+      document.getElementById('search-input').value = term;
+      renderProducts();
+    }
+
+    function resetFilters() {
+      document.getElementById('search-input').value = '';
+      document.getElementById('filter-stock').checked = false;
+      document.getElementById('filter-cert').checked = false;
+      document.getElementById('sort-select').value = 'recommended';
+      selectedCategory = 'all';
+      renderCatalogFilterTabs();
+      renderProducts();
+    }
+
+    // Cart Drawer Controls
+    function addToCart(productId) {
+      const prod = PRODUCTS.find(p => p.id === productId);
+      if (!prod) return;
+      const existing = cart.find(i => i.product.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ product: prod, quantity: 1 });
+      }
+      updateCartDrawer();
+      showToast(`Added ${prod.name} to Requisition Cart`);
+    }
+
+    function updateCartQuantity(productId, delta) {
+      const item = cart.find(i => i.product.id === productId);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter(i => i.product.id !== productId);
+      }
+      updateCartDrawer();
+    }
+
+    function updateCartDrawer() {
+      const totalCount = cart.reduce((s, i) => s + i.quantity, 0);
+      document.getElementById('nav-cart-badge').innerText = totalCount;
+      document.getElementById('cart-items-count-label').innerText = `${totalCount} ${totalCount === 1 ? 'device' : 'devices'}`;
+
+      const list = document.getElementById('cart-items-list');
+      if (cart.length === 0) {
+        list.innerHTML = `<div class="text-center py-12 text-[#7a7a7a]"><p>Your requisition cart is empty.</p></div>`;
+        document.getElementById('cart-subtotal-price').innerText = formatPrice(0, 0);
+        return;
+      }
+
+      list.innerHTML = cart.map(item => `
+        <div class="p-3 bg-white border border-[#e0e0e0] rounded-[16px] flex gap-3 items-center justify-between">
+          <div class="flex items-center gap-3">
+            <img src="${item.product.image}" class="w-12 h-12 rounded-lg object-cover border border-[#e0e0e0]">
+            <div>
+              <h5 class="text-[13px] font-bold text-[#0a3922] line-clamp-1">${item.product.name}</h5>
+              <span class="text-[12px] text-[#7a7a7a]">${formatPrice(item.product.priceUSD, item.product.pricePKR)}</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 border border-[#e0e0e0] rounded-full px-2 py-0.5">
+            <button onclick="updateCartQuantity('${item.product.id}', -1)" class="text-sm font-bold px-1">−</button>
+            <span class="text-xs font-bold">${item.quantity}</span>
+            <button onclick="updateCartQuantity('${item.product.id}', 1)" class="text-sm font-bold px-1">+</button>
+          </div>
+        </div>
+      `).join('');
+
+      const totalUSD = cart.reduce((s, i) => s + (i.product.priceUSD * i.quantity), 0);
+      const totalPKR = cart.reduce((s, i) => s + (i.product.pricePKR * i.quantity), 0);
+      document.getElementById('cart-subtotal-price').innerText = formatPrice(totalUSD, totalPKR);
+    }
+
+    document.getElementById('open-cart-btn').addEventListener('click', () => {
+      document.getElementById('cart-drawer-modal').classList.remove('hidden');
+      document.getElementById('cart-drawer-modal').classList.add('flex');
+    });
+
+    function closeCart() {
+      document.getElementById('cart-drawer-modal').classList.add('hidden');
+      document.getElementById('cart-drawer-modal').classList.remove('flex');
+    }
+
+    function transmitCartWhatsApp() {
+      if (cart.length === 0) return;
+      closeCart();
+      const itemsList = cart.map((i, idx) => `${idx + 1}. ${i.product.name} (Qty: ${i.quantity})`).join('%0A');
+      const totalText = document.getElementById('cart-subtotal-price').innerText;
+      const msg = `*Clinical Requisition - AsianParamedics*%0A%0A*Items:*%0A${itemsList}%0A%0A*Estimated Subtotal:* ${encodeURIComponent(totalText)}%0A%0APlease confirm delivery timeline and proforma invoice.`;
+      window.open(`https://wa.me/923008472910?text=${msg}`, '_blank');
+    }
+
+    // Quick View Modal
+    function openQuickView(productId) {
+      const p = PRODUCTS.find(prod => prod.id === productId);
+      if (!p) return;
+      const content = document.getElementById('quickview-content');
+      content.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <img src="${p.image}" class="w-full h-64 object-cover rounded-[16px] border border-[#e0e0e0]">
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              ${p.certifications.map(c => `<span class="bg-[#d2f2e3] text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-full">✓ ${c}</span>`).join('')}
+            </div>
+          </div>
+          <div class="space-y-3">
+            <span class="text-[12px] text-[#ff643b] font-bold">★ ${p.rating} (${p.reviewsCount} verified reviews)</span>
+            <h3 class="text-[22px] font-bold text-[#0a3922] leading-snug">${p.name}</h3>
+            <p class="text-[14px] text-[#7a7a7a]">${p.tagline}</p>
+            <div class="text-[26px] font-bold text-[#0a3922]">${formatPrice(p.priceUSD, p.pricePKR)}</div>
+            <p class="text-[14px] text-[#3d3d3d] leading-[1.5]">${p.description}</p>
+            <div class="pt-3 border-t border-[#e0e0e0] flex gap-2">
+              <button onclick="addToCart('${p.id}'); closeQuickView();" class="w-full bg-[#ff643b] text-white py-2.5 rounded-[40px] font-semibold text-[13px]">Add to Order</button>
+              <button onclick="openWhatsAppModal('Inquiry for ${encodeURIComponent(p.name)}'); closeQuickView();" class="w-full border border-black text-[#0a3922] py-2.5 rounded-[40px] font-semibold text-[13px]">WhatsApp</button>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('quickview-modal').classList.remove('hidden');
+      document.getElementById('quickview-modal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickview-modal').classList.add('hidden');
+      document.getElementById('quickview-modal').classList.remove('flex');
+    }
+
+    // WhatsApp Modal
+    function openWhatsAppModal(defaultTopic = 'General Medical Equipment Requisition') {
+      document.getElementById('wa-input-msg').value = `Hello Asian Paramedics, I would like to inquire about ${defaultTopic}. Please provide pricing, stock availability, and official quotation.`;
+      document.getElementById('whatsapp-modal').classList.remove('hidden');
+      document.getElementById('whatsapp-modal').classList.add('flex');
+    }
+
+    function closeWhatsAppModal() {
+      document.getElementById('whatsapp-modal').classList.add('hidden');
+      document.getElementById('whatsapp-modal').classList.remove('flex');
+    }
+
+    function handleWhatsAppFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('wa-input-name').value;
+      const facility = document.getElementById('wa-input-facility').value;
+      const msg = document.getElementById('wa-input-msg').value;
+
+      const formatted = `*Clinical Requisition - AsianParamedics*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Facility:* ${encodeURIComponent(facility)}%0A%0A*Message:*%0A${encodeURIComponent(msg)}`;
+      closeWhatsAppModal();
+      window.open(`https://wa.me/923008472910?text=${formatted}`, '_blank');
+    }
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCategories();
+      renderCatalogFilterTabs();
+      renderProducts();
+      renderPersona();
+      updateCartDrawer();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

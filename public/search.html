@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Search & Filter Bar - AsianParamedics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    /* Scoped container styles for seamless Elementor embedding */
+    .ap-section-container {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-[#ffffff] text-[#000000] antialiased m-0 p-0">
+
+<div id="search-section" class="ap-section-container max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <div class="bg-[#ffffff] rounded-[24px] p-4 sm:p-6 border border-[#e0e0e0]/80 shadow-sm">
+    <div class="flex flex-col gap-4">
+      
+      <!-- Main Search Input -->
+      <div class="relative flex items-center">
+        <div class="absolute left-4 text-[#0a3922] pointer-events-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+        <input
+          type="text"
+          id="live-search-input"
+          placeholder="Search by device name, clinical application (e.g., 'pediatric IV', 'trauma', 'centrifuge')..."
+          class="w-full pl-12 pr-10 py-3.5 bg-[#f7f8f9] hover:bg-[#faf7e8]/50 focus:bg-[#ffffff] text-[#000000] placeholder-[#7a7a7a] text-[15px] sm:text-[16px] rounded-[40px] border border-[#e0e0e0] focus:border-[#0a3922] focus:outline-none transition-colors"
+        />
+      </div>
+
+      <!-- Quick Search Suggestions & Filters -->
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+        <!-- Quick Keywords -->
+        <div class="flex flex-wrap items-center gap-1.5 text-[12px] sm:text-[13px]">
+          <span class="text-[#7a7a7a] font-medium mr-1">Trending:</span>
+          <button onclick="setQuery('Vein Finder')" class="px-3 py-1 rounded-[9999px] text-[12px] font-medium bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] transition-colors cursor-pointer">
+            Vein Finder
+          </button>
+          <button onclick="setQuery('Centrifuge')" class="px-3 py-1 rounded-[9999px] text-[12px] font-medium bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] transition-colors cursor-pointer">
+            Centrifuge
+          </button>
+          <button onclick="setQuery('Ambu Bag')" class="px-3 py-1 rounded-[9999px] text-[12px] font-medium bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] transition-colors cursor-pointer">
+            Ambu Bag
+          </button>
+          <button onclick="setQuery('Minor Surgery')" class="px-3 py-1 rounded-[9999px] text-[12px] font-medium bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] transition-colors cursor-pointer">
+            Minor Surgery Kit
+          </button>
+          <button onclick="setQuery('Nitrile Gloves')" class="px-3 py-1 rounded-[9999px] text-[12px] font-medium bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] transition-colors cursor-pointer">
+            Nitrile Gloves
+          </button>
+        </div>
+
+        <!-- Toggle Switches -->
+        <div class="flex items-center gap-2 sm:gap-4 text-[13px]">
+          <label class="flex items-center gap-1.5 cursor-pointer select-none text-[#3d3d3d] hover:text-[#0a3922]">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-[#0a3922] accent-[#0a3922]" />
+            <span class="font-medium">In Stock Only</span>
+          </label>
+          <label class="flex items-center gap-1.5 cursor-pointer select-none text-[#3d3d3d] hover:text-[#0a3922]">
+            <input type="checkbox" checked class="w-4 h-4 rounded text-[#0a3922] accent-[#0a3922]" />
+            <span class="font-medium">CE/ISO Certified</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Results Feedback status -->
+      <div class="flex items-center justify-between text-[13px] text-[#7a7a7a] pt-2 border-t border-[#f2f2f2]">
+        <span>
+          Showing <strong class="text-[#0a3922]">8 verified medical devices</strong> ready for immediate dispatch
+        </span>
+        <button onclick="setQuery('')" class="text-[#ff643b] hover:underline font-semibold text-[12px] cursor-pointer">
+          Reset all filters
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function setQuery(term) {
+    const input = document.getElementById('live-search-input');
+    if (input) {
+      input.value = term;
+      input.focus();
+    }
+  }
+</script>
+
+</body>
+</html>

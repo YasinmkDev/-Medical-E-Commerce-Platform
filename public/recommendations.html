@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Match Intelligence: Role Recommendations - AsianParamedics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    /* Scoped container styles for seamless Elementor embedding */
+    .ap-section-container {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-[#ffffff] text-[#000000] antialiased m-0 p-0">
+
+<section id="recommended" class="ap-section-container py-12 sm:py-16 bg-[#ffffff] border-y border-[#e0e0e0]/70">
+  <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+    
+    <!-- Section Header -->
+    <div class="space-y-3">
+      <div class="inline-flex items-center gap-2 bg-[#faf7e8] text-[#0a3922] text-[12px] font-bold px-3 py-1 rounded-[9999px] border border-[#e0e0e0]">
+        <svg class="w-3.5 h-3.5 text-[#ff643b]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>Clinical Match Intelligence</span>
+      </div>
+
+      <div>
+        <h2 class="text-[32px] sm:text-[42px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
+          Tailored Equipment by Medical Role
+        </h2>
+        <p class="text-[16px] text-[#3d3d3d] max-w-[620px] mt-2">
+          Select your practice environment to load device bundles calibrated specifically for your clinical protocol and regulatory requirements.
+        </p>
+      </div>
+    </div>
+
+    <!-- Persona Selectors - 40px Pill buttons -->
+    <div class="flex flex-wrap gap-2.5 sm:gap-3" id="persona-buttons">
+      <button onclick="switchPersona('paramedic')" id="persona-btn-paramedic" class="persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#0a3922] text-[#ffffff] transition-all cursor-pointer">
+        <span>🚑 EMS Paramedic & Trauma Lead</span>
+      </button>
+      <button onclick="switchPersona('clinic')" id="persona-btn-clinic" class="persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] border border-[#e0e0e0] transition-all cursor-pointer">
+        <span>🩺 Outpatient Clinic GP</span>
+      </button>
+      <button onclick="switchPersona('icu')" id="persona-btn-icu" class="persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] border border-[#e0e0e0] transition-all cursor-pointer">
+        <span>🏥 ICU & Operating Director</span>
+      </button>
+      <button onclick="switchPersona('lab')" id="persona-btn-lab" class="persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] border border-[#e0e0e0] transition-all cursor-pointer">
+        <span>🔬 Pathology Laboratory</span>
+      </button>
+    </div>
+
+    <!-- Active Persona Context Card (Sage Wash #e4f7ee) -->
+    <div class="bg-[#e4f7ee] rounded-[24px] p-6 sm:p-8 space-y-4 border border-[#0a3922]/10">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <span id="persona-badge" class="bg-[#0a3922] text-[#ffffff] text-[12px] font-bold px-3 py-1 rounded-[9999px]">
+            Field Urgent Protocol
+          </span>
+          <h3 id="persona-title" class="text-[20px] sm:text-[24px] font-bold text-[#0a3922]">
+            Recommended Protocol Bundle for EMS Paramedic & Trauma Lead
+          </h3>
+        </div>
+        <span class="text-[13px] font-semibold text-[#0a3922] bg-[#ffffff] px-3.5 py-1.5 rounded-[9999px] border border-[#0a3922]/10 inline-flex items-center gap-1.5 self-start sm:self-auto">
+          <svg class="w-4 h-4 text-[#1dbf73]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          Verified Clinical Fit
+        </span>
+      </div>
+
+      <p id="persona-context" class="text-[15px] text-[#3d3d3d] leading-[1.5] max-w-[840px]">
+        Rapid transit emergency response, roadside cannulation, and critical airway management. Priority placed on shock-resistant casing and rechargeable high-capacity batteries.
+      </p>
+
+      <div class="pt-2 flex items-center gap-2 text-[13px] font-semibold text-[#0a3922]">
+        <span class="w-2 h-2 rounded-full bg-[#1dbf73]"></span>
+        <span>Procurement Advantage: </span>
+        <span id="persona-benefit" class="text-[#3d3d3d] font-normal">Express motorcycle courier dispatch available within 2 hours across major metro centers.</span>
+      </div>
+    </div>
+
+    <!-- Recommended Products 4-Col Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Product 1: AccuVein Pro -->
+      <div class="bg-[#ffffff] rounded-[24px] border border-[#e0e0e0] p-5 flex flex-col justify-between hover:border-[#0a3922] transition-colors relative group">
+        <div>
+          <div class="relative w-full h-44 rounded-[16px] overflow-hidden bg-[#f7f8f9] mb-4">
+            <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="AccuVein Pro" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <span class="absolute top-2.5 left-2.5 bg-[#0a3922] text-[#ffffff] text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">
+              Editor's Choice
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 bg-[#ffffff]/90 text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-md">
+              98% Match
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-[12px] text-[#7a7a7a] mb-1.5">
+            <span>CE 0123</span> • <span>2-Year Full Replacement</span>
+          </div>
+          <h4 class="text-[16px] font-bold text-[#0a3922] leading-snug line-clamp-2 mb-2">
+            AsianParamedics AccuVein Pro Portable Vein Finder
+          </h4>
+          <p class="text-[13px] text-[#3d3d3d] line-clamp-2 mb-3">
+            Dual-wavelength Near-Infrared projection for 98% first-stick cannulation success.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#f2f2f2] space-y-3">
+          <div class="flex items-baseline justify-between">
+            <span class="text-[20px] font-bold text-[#0a3922]">PKR 189,000</span>
+            <span class="text-[12px] text-[#1dbf73] font-semibold">✓ In Stock (18)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://wa.me/923008472910?text=I%20want%20to%20order%20AccuVein%20Pro" target="_blank" class="w-full py-2 px-3 rounded-[40px] border border-[#000000] text-[#0a3922] hover:bg-[#faf7e8] text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Inquire
+            </a>
+            <a href="https://wa.me/923008472910?text=Order%20AccuVein%20Pro%20now" target="_blank" class="w-full py-2 px-3 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Order
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: PulsePro Oximeter -->
+      <div class="bg-[#ffffff] rounded-[24px] border border-[#e0e0e0] p-5 flex flex-col justify-between hover:border-[#0a3922] transition-colors relative group">
+        <div>
+          <div class="relative w-full h-44 rounded-[16px] overflow-hidden bg-[#f7f8f9] mb-4">
+            <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="PulsePro Oximeter" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <span class="absolute top-2.5 left-2.5 bg-[#0a3922] text-[#ffffff] text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">
+              Fast Dispatch
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 bg-[#ffffff]/90 text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-md">
+              96% Match
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-[12px] text-[#7a7a7a] mb-1.5">
+            <span>ISO 80601-2-61</span> • <span>1-Year Warranty</span>
+          </div>
+          <h4 class="text-[16px] font-bold text-[#0a3922] leading-snug line-clamp-2 mb-2">
+            PulsePro Clinical Handheld Pulse Oximeter
+          </h4>
+          <p class="text-[13px] text-[#3d3d3d] line-clamp-2 mb-3">
+            High-accuracy plethysmograph with anti-motion perfusion tracking for neonates & adults.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#f2f2f2] space-y-3">
+          <div class="flex items-baseline justify-between">
+            <span class="text-[20px] font-bold text-[#0a3922]">PKR 26,500</span>
+            <span class="text-[12px] text-[#1dbf73] font-semibold">✓ In Stock (42)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://wa.me/923008472910?text=Inquire%20PulsePro%20Oximeter" target="_blank" class="w-full py-2 px-3 rounded-[40px] border border-[#000000] text-[#0a3922] hover:bg-[#faf7e8] text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Inquire
+            </a>
+            <a href="https://wa.me/923008472910?text=Order%20PulsePro%20Oximeter" target="_blank" class="w-full py-2 px-3 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Order
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: MediResus Ambu Bag -->
+      <div class="bg-[#ffffff] rounded-[24px] border border-[#e0e0e0] p-5 flex flex-col justify-between hover:border-[#0a3922] transition-colors relative group">
+        <div>
+          <div class="relative w-full h-44 rounded-[16px] overflow-hidden bg-[#f7f8f9] mb-4">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=600&q=80" alt="Ambu Bag" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <span class="absolute top-2.5 left-2.5 bg-[#0a3922] text-[#ffffff] text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">
+              Critical Care
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 bg-[#ffffff]/90 text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-md">
+              95% Match
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-[12px] text-[#7a7a7a] mb-1.5">
+            <span>ISO 10651-4</span> • <span>3-Year Autoclave</span>
+          </div>
+          <h4 class="text-[16px] font-bold text-[#0a3922] leading-snug line-clamp-2 mb-2">
+            MediResus Adult Silicone Ambu Bag Resuscitator
+          </h4>
+          <p class="text-[13px] text-[#3d3d3d] line-clamp-2 mb-3">
+            Autoclavable 134°C medical silicone manual resuscitator with 60cm H2O pop-off relief valve.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#f2f2f2] space-y-3">
+          <div class="flex items-baseline justify-between">
+            <span class="text-[20px] font-bold text-[#0a3922]">PKR 14,800</span>
+            <span class="text-[12px] text-[#1dbf73] font-semibold">✓ In Stock (35)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://wa.me/923008472910?text=Inquire%20Ambu%20Bag" target="_blank" class="w-full py-2 px-3 rounded-[40px] border border-[#000000] text-[#0a3922] hover:bg-[#faf7e8] text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Inquire
+            </a>
+            <a href="https://wa.me/923008472910?text=Order%20Ambu%20Bag" target="_blank" class="w-full py-2 px-3 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Order
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4: TraumaPack Pro EMS Backpack -->
+      <div class="bg-[#ffffff] rounded-[24px] border border-[#e0e0e0] p-5 flex flex-col justify-between hover:border-[#0a3922] transition-colors relative group">
+        <div>
+          <div class="relative w-full h-44 rounded-[16px] overflow-hidden bg-[#f7f8f9] mb-4">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="TraumaPack Pro" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+            <span class="absolute top-2.5 left-2.5 bg-[#0a3922] text-[#ffffff] text-[11px] font-bold px-2.5 py-0.5 rounded-[9999px]">
+              Paramedic Standard
+            </span>
+            <span class="absolute bottom-2.5 right-2.5 bg-[#ffffff]/90 text-[#0a3922] text-[11px] font-bold px-2 py-0.5 rounded-md">
+              97% Match
+            </span>
+          </div>
+          <div class="flex items-center gap-2 text-[12px] text-[#7a7a7a] mb-1.5">
+            <span>MIL-SPEC 1000D</span> • <span>5-Year Fabric Warranty</span>
+          </div>
+          <h4 class="text-[16px] font-bold text-[#0a3922] leading-snug line-clamp-2 mb-2">
+            TraumaPack Pro Multi-Compartment EMS Backpack
+          </h4>
+          <p class="text-[13px] text-[#3d3d3d] line-clamp-2 mb-3">
+            Heavy-duty waterproof trauma backpack with color-coded modular pouches & O2 cylinder harness.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-[#f2f2f2] space-y-3">
+          <div class="flex items-baseline justify-between">
+            <span class="text-[20px] font-bold text-[#0a3922]">PKR 34,500</span>
+            <span class="text-[12px] text-[#1dbf73] font-semibold">✓ In Stock (21)</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://wa.me/923008472910?text=Inquire%20TraumaPack%20Pro" target="_blank" class="w-full py-2 px-3 rounded-[40px] border border-[#000000] text-[#0a3922] hover:bg-[#faf7e8] text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Inquire
+            </a>
+            <a href="https://wa.me/923008472910?text=Order%20TraumaPack%20Pro" target="_blank" class="w-full py-2 px-3 rounded-[40px] bg-[#ff643b] hover:bg-[#e5522b] text-white text-[13px] font-semibold flex items-center justify-center gap-1 transition-colors text-decoration-none">
+              Order
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const personas = {
+    paramedic: {
+      badge: "Field Urgent Protocol",
+      title: "Recommended Protocol Bundle for EMS Paramedic & Trauma Lead",
+      context: "Rapid transit emergency response, roadside cannulation, and critical airway management. Priority placed on shock-resistant casing and rechargeable high-capacity batteries.",
+      benefit: "Express motorcycle courier dispatch available within 2 hours across major metro centers."
+    },
+    clinic: {
+      badge: "High-Volume Primary Care",
+      title: "Recommended Protocol Bundle for Outpatient Clinic GP",
+      context: "Diagnostic screening, painless pediatric vaccination/phlebotomy, and minor in-office procedures. Calibrated for intuitive non-specialist operation.",
+      benefit: "Complimentary calibration sheets and local technician on-boarding included."
+    },
+    icu: {
+      badge: "Critical Institutional Care",
+      title: "Recommended Protocol Bundle for ICU & Operating Director",
+      context: "Round-the-clock hemodialysis access, difficult venous anatomy visualization, and surgical sterilization standards.",
+      benefit: "Bulk institutional quotation tiers and official GST hospital purchase order terms."
+    },
+    lab: {
+      badge: "Diagnostic Accuracy",
+      title: "Recommended Protocol Bundle for Pathology Laboratory",
+      context: "Serum separation, PRP isolation, clinical centrifugation, and sterile sampling consumables.",
+      benefit: "Full ISO 13485 test calibration certificate and 2-year warranty."
+    }
+  };
+
+  function switchPersona(p) {
+    document.querySelectorAll('.persona-btn').forEach(btn => {
+      btn.className = "persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#faf7e8] hover:bg-[#d2f2e3] text-[#0a3922] border border-[#e0e0e0] transition-all cursor-pointer";
+    });
+    document.getElementById('persona-btn-' + p).className = "persona-btn flex items-center gap-2 px-5 py-2.5 rounded-[40px] text-[14px] font-semibold bg-[#0a3922] text-[#ffffff] transition-all cursor-pointer";
+    
+    document.getElementById('persona-badge').innerText = personas[p].badge;
+    document.getElementById('persona-title').innerText = personas[p].title;
+    document.getElementById('persona-context').innerText = personas[p].context;
+    document.getElementById('persona-benefit').innerText = personas[p].benefit;
+  }
+</script>
+
+</body>
+</html>

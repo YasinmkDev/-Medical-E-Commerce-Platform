@@ -1,0 +1,6 @@
+{
+  "name": "Asian Paramedics - Medical Devices & Equipment",
+  "description": "Professional medical eCommerce platform featuring certified clinical devices, smart search, personalized recommendations, and rapid WhatsApp procurement.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

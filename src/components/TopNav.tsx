@@ -66,7 +66,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           </div>
           <div className="flex flex-col">
             <span className="text-[20px] font-bold tracking-tight text-[#0a3922] leading-tight">
-              Asian<span className="text-[#ff643b]">Paramedics</span>
+              Global<span className="text-[#ff643b]">Paramedics</span>
             </span>
             <span className="text-[11px] font-semibold text-[#7a7a7a] tracking-wider uppercase">
               Medical Devices & EMS

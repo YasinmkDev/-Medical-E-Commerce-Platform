@@ -107,7 +107,7 @@ export default function App() {
       0
     );
 
-    const fullMessage = `*New Clinical Requisition - AsianParamedics*\n${isHospitalPO ? '*(Hospital Purchase Order)*\n' : ''}\n*Items:*\n${itemsSummary}\n\n*Estimated Total:* ${currency === 'PKR' ? 'PKR ' + subtotal.toLocaleString() : '$' + subtotal.toLocaleString()}\n${orderNotes ? `\n*Ward Notes:* ${orderNotes}\n` : ''}\nPlease confirm delivery timeline and provide official GST invoice.`;
+    const fullMessage = `*New Clinical Requisition - GlobalParamedics*\n${isHospitalPO ? '*(Hospital Purchase Order)*\n' : ''}\n*Items:*\n${itemsSummary}\n\n*Estimated Total:* ${currency === 'PKR' ? 'PKR ' + subtotal.toLocaleString() : '$' + subtotal.toLocaleString()}\n${orderNotes ? `\n*Ward Notes:* ${orderNotes}\n` : ''}\nPlease confirm delivery timeline and provide official GST invoice.`;
 
     const encoded = encodeURIComponent(fullMessage);
     window.open(`https://wa.me/923008472910?text=${encoded}`, '_blank', 'noopener,noreferrer');
@@ -251,7 +251,7 @@ export default function App() {
           onSelectCategory={(catId) => handleFilterUpdate({ selectedCategory: catId })}
         />
 
-        {/* Lavender Toolkit Section: Why Clinicians Choose AsianParamedics */}
+        {/* Lavender Toolkit Section: Why Clinicians Choose GlobalParamedics */}
         <WhyChooseUs
           onWhatsAppContact={() => {
             setWhatsAppInquiryProduct(null);
@@ -328,7 +328,7 @@ export default function App() {
                   Official Proforma Quote Generated
                 </span>
                 <h3 className="text-[22px] font-bold text-[#0a3922] mt-1">
-                  AsianParamedics Requisition #AP-{Math.floor(100000 + Math.random() * 900000)}
+                  GlobalParamedics Requisition #AP-{Math.floor(100000 + Math.random() * 900000)}
                 </h3>
                 <span className="text-[12px] text-[#7a7a7a]">
                   Date: {new Date().toLocaleDateString()} • Valid for 30 Days

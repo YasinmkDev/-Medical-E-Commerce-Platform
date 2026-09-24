@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsApp, onSelectCategory
               </div>
               <div className="flex flex-col">
                 <span className="text-[20px] font-bold tracking-tight text-white leading-tight">
-                  Asian<span className="text-[#ff643b]">Paramedics</span>
+                  Global<span className="text-[#ff643b]">Paramedics</span>
                 </span>
                 <span className="text-[11px] font-semibold text-[#d2f2e3] tracking-wider uppercase">
                   Medical Devices & Emergency Supplies
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsApp, onSelectCategory
               </div>
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#1dbf73] shrink-0 mt-0.5" />
-                <span>orders@asianparamedics.com</span>
+                <span>orders@Globalparamedics.com</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#1dbf73] shrink-0 mt-0.5" />
@@ -155,10 +155,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsApp, onSelectCategory
 
         </div>
 
-        {/* Regulatory Disclaimer (Mandatory for clinical ecommerce and based on asianparamedics.com) */}
+        {/* Regulatory Disclaimer (Mandatory for clinical ecommerce and based on Globalparamedics.com) */}
         <div className="pt-8 border-t border-white/10 text-[12px] text-[#d2f2e3]/70 space-y-2 leading-relaxed">
           <p>
-            <strong className="text-white">Medical Device Notice & Regulatory Compliance:</strong> The equipment, diagnostic devices, and clinical consumables displayed on AsianParamedics.com are designed for licensed healthcare professionals, trained paramedics, diagnostic laboratories, and health institutions. Home monitoring devices (such as pulse oximeters and digital sphygmomanometers) are intended for auxiliary wellness monitoring and do not replace formal clinical diagnosis. All electrical and optical devices are distributed in compliance with CE Mark, ISO 13485 quality standards, and DRAP regulations.
+            <strong className="text-white">Medical Device Notice & Regulatory Compliance:</strong> The equipment, diagnostic devices, and clinical consumables displayed on GlobalParamedics.com are designed for licensed healthcare professionals, trained paramedics, diagnostic laboratories, and health institutions. Home monitoring devices (such as pulse oximeters and digital sphygmomanometers) are intended for auxiliary wellness monitoring and do not replace formal clinical diagnosis. All electrical and optical devices are distributed in compliance with CE Mark, ISO 13485 quality standards, and DRAP regulations.
           </p>
           <p>
             GlobalParamedics provides warranty coverage, calibration sheets, and original equipment manufacturer (OEM) verification on all surgical and vascular access equipment.

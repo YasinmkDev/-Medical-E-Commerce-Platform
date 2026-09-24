@@ -74,7 +74,7 @@ export const WhatsAppChatModal: React.FC<WhatsAppChatModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="text-[17px] font-bold leading-tight">
-                  AsianParamedics Clinical Desk
+                  GlobalParamedics Clinical Desk
                 </h3>
                 <span className="w-2 h-2 rounded-full bg-[#1dbf73] animate-pulse"></span>
               </div>

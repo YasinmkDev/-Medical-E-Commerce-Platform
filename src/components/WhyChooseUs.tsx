@@ -51,7 +51,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onWhatsAppContact }) =
             <span>Clinical Reliability</span>
           </div>
           <h2 className="text-[32px] sm:text-[44px] font-semibold text-[#0a3922] tracking-[-0.019em] leading-[1.15]">
-            Why 10,000+ Paramedics & Clinics Rely on AsianParamedics
+            Why 10,000+ Paramedics & Clinics Rely on GlobalParamedics
           </h2>
           <p className="text-[16px] text-[#3d3d3d] leading-[1.5]">
             Medical devices shouldn't fail when a patient's life is on the line. We combine certified global hardware with rapid local clinical support.

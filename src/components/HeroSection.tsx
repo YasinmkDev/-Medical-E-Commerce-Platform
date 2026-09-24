@@ -133,7 +133,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </div>
                   <div>
                     <div className="text-[14px] font-semibold leading-tight text-white flex items-center gap-1.5">
-                      AsianParamedics
+                      GlobalParamedics
                       <span className="w-2 h-2 rounded-full bg-[#1dbf73]"></span>
                     </div>
                     <div className="text-[11px] text-[#d2f2e3] font-normal">
@@ -189,11 +189,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </div>
                 </div>
 
-                {/* Incoming Message (AsianParamedics Clinician Desk) - White with 1px #e0e0e0 border */}
+                {/* Incoming Message (GlobalParamedics Clinician Desk) - White with 1px #e0e0e0 border */}
                 <div className="flex flex-col items-start">
                   <div className="bg-[#ffffff] text-[#000000] p-3 rounded-[16px] rounded-tl-none max-w-[90%] border border-[#e0e0e0] text-[13px] leading-[1.35]">
                     <div className="text-[11px] font-bold text-[#1dbf73] mb-1">
-                      AsianParamedics Response Desk
+                      GlobalParamedics Response Desk
                     </div>
                     {chatContent[activeMessageTab].reply}
                     <div className="mt-2 pt-2 border-t border-[#f2f2f2] flex items-center justify-between text-[11px]">

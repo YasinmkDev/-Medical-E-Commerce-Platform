@@ -94,7 +94,7 @@ export const CATEGORIES: Category[] = [
 export const PRODUCTS: Product[] = [
   {
     id: 'ap-vf-900',
-    name: 'AsianParamedics AccuVein Pro Portable Vein Finder',
+    name: 'GlobalParamedics AccuVein Pro Portable Vein Finder',
     category: 'vein-finders',
     tagline: 'Dual-wavelength Near-Infrared projection for 98% first-stick cannulation success.',
     priceUSD: 680,
@@ -574,7 +574,7 @@ export const CLIENT_TESTIMONIALS = [
     name: 'Dr. Tariq Mahmood, FRCS',
     role: 'Head of Emergency & Trauma Care',
     hospital: 'Metropolitan Surgical Hospital',
-    text: 'The AccuVein Pro vein detector from AsianParamedics has radically transformed our pediatric trauma bay. Difficult veins that previously took three nurses 20 minutes to cannulate are now accessed on the first attempt.',
+    text: 'The AccuVein Pro vein detector from GlobalParamedics has radically transformed our pediatric trauma bay. Difficult veins that previously took three nurses 20 minutes to cannulate are now accessed on the first attempt.',
     productBought: 'AccuVein Pro Vein Finder',
     verified: true,
     rating: 5

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { TopNav } from './components/TopNav';
+// import { TopNav } from './components/TopNav';
 import { HeroSection } from './components/HeroSection';
 import { TrustStrip } from './components/TrustStrip';
 import { SearchBar } from './components/SearchBar';
@@ -181,7 +181,7 @@ export default function App() {
       )}
 
       {/* Top Navigation */}
-      <TopNav
+      {/* <TopNav
         cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenWhatsApp={() => {
@@ -191,7 +191,7 @@ export default function App() {
         onSearchClick={scrollToSearch}
         currency={currency}
         onToggleCurrency={() => setCurrency(prev => prev === 'USD' ? 'PKR' : 'USD')}
-      />
+      /> */}
 
       <main className="flex-1">
         {/* Full-Bleed Dark Hero Section */}

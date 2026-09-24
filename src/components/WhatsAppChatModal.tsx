@@ -30,8 +30,8 @@ export const WhatsAppChatModal: React.FC<WhatsAppChatModalProps> = ({
   const [hospitalName, setHospitalName] = useState('');
   const [customMessage, setCustomMessage] = useState(
     initialProduct 
-      ? `Hello Asian Paramedics, I am interested in procuring the ${initialProduct.name} (Code: ${initialProduct.id}). Please share immediate availability, official quotation, and delivery lead time.` 
-      : 'Hello Asian Paramedics team, I would like to request an official catalog & institutional quote for our medical facility.'
+      ? `Hello GlobalParamedics, I am interested in procuring the ${initialProduct.name} (Code: ${initialProduct.id}). Please share immediate availability, official quotation, and delivery lead time.` 
+      : 'Hello GlobalParamedics team, I would like to request an official catalog & institutional quote for our medical facility.'
   );
   const [isSent, setIsSent] = useState(false);
 
@@ -49,7 +49,7 @@ export const WhatsAppChatModal: React.FC<WhatsAppChatModalProps> = ({
     setIsSent(true);
 
     // Format WhatsApp Web URL
-    const fullText = `*Clinical Requisition - Asian Paramedics*\n\n*Name:* ${userName || 'Medical Inquirer'}\n*Role:* ${userRole}\n*Facility:* ${hospitalName || 'Clinic/Hospital'}\n*Topic:* ${inquiryType}\n\n*Message:*\n${customMessage}`;
+    const fullText = `*Clinical Requisition - GlobalParamedics*\n\n*Name:* ${userName || 'Medical Inquirer'}\n*Role:* ${userRole}\n*Facility:* ${hospitalName || 'Clinic/Hospital'}\n*Topic:* ${inquiryType}\n\n*Message:*\n${customMessage}`;
     const encoded = encodeURIComponent(fullText);
     const whatsappUrl = `https://wa.me/923008472910?text=${encoded}`;
 
@@ -102,7 +102,7 @@ export const WhatsAppChatModal: React.FC<WhatsAppChatModalProps> = ({
               Transmitting to WhatsApp...
             </h4>
             <p className="text-[14px] text-[#3d3d3d] max-w-[380px] mx-auto leading-relaxed">
-              Your inquiry has been compiled into an official clinical format and transferred to the Asian Paramedics WhatsApp hotline (+92 300 8472910).
+              Your inquiry has been compiled into an official clinical format and transferred to the GlobalParamedics WhatsApp hotline (+92 300 8472910).
             </p>
             <div className="pt-2">
               <button
@@ -130,7 +130,7 @@ export const WhatsAppChatModal: React.FC<WhatsAppChatModalProps> = ({
                     key={t}
                     onClick={() => {
                       setInquiryType(t);
-                      setCustomMessage(`Hello Asian Paramedics, please provide pricing, stock availability, and official technical brochure for ${t}.`);
+                      setCustomMessage(`Hello GlobalParamedics, please provide pricing, stock availability, and official technical brochure for ${t}.`);
                     }}
                     className={`px-3 py-1 rounded-[9999px] text-[12px] font-medium transition-colors ${
                       inquiryType === t 

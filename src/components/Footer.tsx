@@ -161,14 +161,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenWhatsApp, onSelectCategory
             <strong className="text-white">Medical Device Notice & Regulatory Compliance:</strong> The equipment, diagnostic devices, and clinical consumables displayed on AsianParamedics.com are designed for licensed healthcare professionals, trained paramedics, diagnostic laboratories, and health institutions. Home monitoring devices (such as pulse oximeters and digital sphygmomanometers) are intended for auxiliary wellness monitoring and do not replace formal clinical diagnosis. All electrical and optical devices are distributed in compliance with CE Mark, ISO 13485 quality standards, and DRAP regulations.
           </p>
           <p>
-            Asian Paramedics provides warranty coverage, calibration sheets, and original equipment manufacturer (OEM) verification on all surgical and vascular access equipment.
+            GlobalParamedics provides warranty coverage, calibration sheets, and original equipment manufacturer (OEM) verification on all surgical and vascular access equipment.
           </p>
         </div>
 
         {/* Bottom Copyright */}
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[13px] text-[#d2f2e3]/80 gap-3">
           <div>
-            © {new Date().getFullYear()} Asian Paramedics. All rights reserved.
+            © {new Date().getFullYear()} GlobalParamedics. All rights reserved.
           </div>
           <div className="flex items-center gap-4 text-[12px]">
             <span>Cash on Delivery (COD) Available</span>

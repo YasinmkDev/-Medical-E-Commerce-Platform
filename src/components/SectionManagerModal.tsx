@@ -171,7 +171,7 @@ export const SectionManagerModal: React.FC<SectionManagerModalProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-[18px] sm:text-[20px] font-bold text-white font-serif">
-                  Asian Paramedics Modular Sections
+                  GlobalParamedics Modular Sections
                 </h2>
                 <span className="bg-[#25D366]/20 text-[#25D366] text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-[#25D366]/30">
                   Elementor Ready

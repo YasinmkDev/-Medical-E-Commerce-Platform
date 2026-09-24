@@ -8,9 +8,7 @@ import {
   Phone, 
   ShieldCheck, 
   Heart,
-  ChevronDown,
-  Code2,
-  Download
+  ChevronDown
 } from 'lucide-react';
 
 interface TopNavProps {
@@ -20,7 +18,6 @@ interface TopNavProps {
   onSearchClick: () => void;
   currency: 'USD' | 'PKR';
   onToggleCurrency: () => void;
-  onExportHTML?: () => void;
 }
 
 export const TopNav: React.FC<TopNavProps> = ({
@@ -30,7 +27,6 @@ export const TopNav: React.FC<TopNavProps> = ({
   onSearchClick,
   currency,
   onToggleCurrency,
-  onExportHTML,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -118,20 +114,6 @@ export const TopNav: React.FC<TopNavProps> = ({
               </span>
             )}
           </button>
-
-          {/* Modular Section HTML Export Button */}
-          {onExportHTML && (
-            <button
-              onClick={onExportHTML}
-              id="export-elementor-btn"
-              className="inline-flex items-center gap-1.5 bg-[#d4af37]/15 hover:bg-[#d4af37]/25 text-[#10283b] border border-[#d4af37]/50 text-[13px] font-bold py-1.5 px-3.5 rounded-[40px] transition-all cursor-pointer shadow-xs"
-              title="Copy / Download modular section HTML files (hero.html, secondsection.html, shop.html, etc.) for Elementor"
-            >
-              <Code2 className="w-4 h-4 text-[#ff643b]" />
-              <span className="hidden sm:inline">Section Files (.html)</span>
-              <span className="sm:hidden">Sections</span>
-            </button>
-          )}
 
           {/* WhatsApp Direct Clinical Inquiry Button (Canonical Outline Nav Button from design.md) */}
           <button

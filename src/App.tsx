@@ -14,8 +14,7 @@ import { StickyBottomNotification } from './components/StickyBottomNotification'
 import { Footer } from './components/Footer';
 import { PRODUCTS } from './data/medicalData';
 import { CartItem, FilterState, Product } from './types';
-import { CheckCircle2, FileText, Printer, X, Download, Code2, Copy, ExternalLink, Layers, Sparkles } from 'lucide-react';
-import { SectionManagerModal, SECTIONS } from './components/SectionManagerModal';
+import { CheckCircle2, FileText, Printer, X, Download } from 'lucide-react';
 
 export default function App() {
   // Cart State
@@ -36,14 +35,7 @@ export default function App() {
   const [isWhatsAppModalOpen, setIsWhatsAppModalOpen] = useState(false);
   const [whatsAppInquiryProduct, setWhatsAppInquiryProduct] = useState<Product | null>(null);
   const [showProformaModal, setShowProformaModal] = useState(false);
-  const [showSectionModal, setShowSectionModal] = useState(false);
-  const [selectedSectionId, setSelectedSectionId] = useState('hero');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-
-  const handleOpenSection = (sectionId: string) => {
-    setSelectedSectionId(sectionId);
-    setShowSectionModal(true);
-  };
 
   // Filter State
   const [filter, setFilter] = useState<FilterState>({
@@ -199,44 +191,7 @@ export default function App() {
         onSearchClick={scrollToSearch}
         currency={currency}
         onToggleCurrency={() => setCurrency(prev => prev === 'USD' ? 'PKR' : 'USD')}
-        onExportHTML={() => setShowSectionModal(true)}
       />
-
-      {/* Modular Sections Quick Bar (hero.html, secondsection.html, shop.html, etc.) */}
-      <div className="bg-[#0b151e] border-b border-[#d4af37]/30 text-white px-4 py-2.5 shadow-md">
-        <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-3 text-[12px]">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-ping"></span>
-            <span className="font-bold text-[#d4af37] uppercase tracking-wider text-[11px] font-mono">
-              Elementor Section Exporter:
-            </span>
-            <span className="text-gray-300 hidden md:inline">
-              Exact site sections extracted into standalone HTML files
-            </span>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            {SECTIONS.slice(0, 6).map((sec) => (
-              <button
-                key={sec.id}
-                onClick={() => handleOpenSection(sec.id)}
-                className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-[#d4af37]/30 hover:text-white text-gray-200 border border-white/10 font-mono text-[11px] transition-colors cursor-pointer flex items-center gap-1"
-                title={`View and copy ${sec.filename}`}
-              >
-                <span>{sec.filename}</span>
-              </button>
-            ))}
-
-            <button
-              onClick={() => setShowSectionModal(true)}
-              className="px-3 py-1 rounded-full bg-[#d4af37] text-[#0b151e] font-bold text-[11px] hover:bg-[#c49f27] transition-all cursor-pointer shadow-xs flex items-center gap-1"
-            >
-              <Layers className="w-3.5 h-3.5" />
-              <span>All 9 Sections</span>
-            </button>
-          </div>
-        </div>
-      </div>
 
       <main className="flex-1">
         {/* Full-Bleed Dark Hero Section */}
@@ -432,13 +387,6 @@ export default function App() {
           </div>
         </div>
       )}
-
-      {/* Modular Sections Modal (hero.html, secondsection.html, shop.html, etc.) */}
-      <SectionManagerModal
-        isOpen={showSectionModal}
-        onClose={() => setShowSectionModal(false)}
-        defaultSectionId={selectedSectionId}
-      />
     </div>
   );
 }

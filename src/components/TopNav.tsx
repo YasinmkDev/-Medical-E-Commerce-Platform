@@ -32,26 +32,6 @@ export const TopNav: React.FC<TopNavProps> = ({
 
   return (
     <header className="sticky top-0 z-40 bg-[#ffffff] border-b border-[#e0e0e0]/70 transition-all duration-200">
-      {/* Upper Clinical Urgent Bar */}
-      <div className="bg-[#0a3922] text-[#d2f2e3] text-[13px] py-1.5 px-4 sm:px-6">
-        <div className="max-w-[1280px] mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#1dbf73] animate-pulse"></span>
-            <span className="font-medium text-white">Emergency Paramedic Dispatch & Technical Support:</span>
-            <span className="hidden sm:inline text-white/90 font-mono tracking-wide">+92 300 8472910</span>
-          </div>
-          <div className="flex items-center gap-4 text-[12px]">
-            <span className="hidden md:inline text-white/80">Official Distributor: Vein Detectors & EMS Supplies</span>
-            <button 
-              onClick={onToggleCurrency} 
-              className="bg-white/10 hover:bg-white/20 text-white px-2.5 py-0.5 rounded-full transition-colors font-mono font-medium"
-              title="Toggle Currency"
-            >
-              Currency: <strong className="text-white">{currency}</strong>
-            </button>
-          </div>
-        </div>
-      </div>
 
       {/* Main Navigation Bar */}
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-4">
